@@ -6,12 +6,13 @@ const app = express()
 const logger = (req, res, next) => {
   const method = req.method
   const url = req.url
-  const time = new Date().getFullYear()
+  const time = Date.now()
   console.log(method, url, time)
   next()
 }
-
-app.get('/', logger, (req, res) => {
+console.log(a);
+app.get('/', logger, (req, res ) => {
+  
   res.send('Home')
 })
 app.get('/about', logger, (req, res) => {
