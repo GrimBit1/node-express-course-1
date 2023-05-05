@@ -1,10 +1,19 @@
 const express = require('express')
 const app = express()
 
-app.get('/', () => {
-
-});
-
+app.use(express.static(__dirname + '/navbar-app'))
+app.get('/json', (req, res) => {
+    res.json([{ name: "Aditya" }])
+})
+// app.get('/', (req, res) => {
+//     res.status(200).send('Hi')
+// });
+// app.get('/about', (req, res) => {
+//     res.status(200).send('About')
+// });
+// app.all(' *', (req, res) => {
+//     res.status(404).send('404')
+// });
 // app.get methods in express
 // app.post methods in express
 // app.put methods in express
