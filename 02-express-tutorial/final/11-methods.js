@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
-let { people } = require('./data')
+const path = require('path');
+let { people } = require('../data')
 
 // static assets
-app.use(express.static('./methods-public'))
+app.use(express.static(path.join(__dirname, '../methods-public')))
 // parse form data
 app.use(express.urlencoded({ extended: false }))
 // parse json
